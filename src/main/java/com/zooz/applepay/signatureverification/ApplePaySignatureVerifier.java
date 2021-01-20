@@ -171,7 +171,7 @@ public class ApplePaySignatureVerifier {
         byte[] transactionIdBytes = Hex.decode(applePayHeader.getTransactionId());
         byte[] applicationDataBytes = null;
         if (!StringUtils.isEmpty(applePayHeader.getApplicationData())) {
-            applicationDataBytes = Base64.decode(applePayHeader.getApplicationData());
+            applicationDataBytes = Hex.decode(applePayHeader.getApplicationData());
         }
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
